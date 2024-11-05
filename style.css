@@ -94,7 +94,7 @@ body {
 
     #work-experience {
         order: -1; /* Sets Work Experience to appear at the top */
-        margin-top: -1350px; /* Adjust this value to control the distance from the top */
+        margin-top: -1250px; /* Adjust this value to control the distance from the top */
     }
 }
 
