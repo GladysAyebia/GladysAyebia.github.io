@@ -1,126 +1,157 @@
-*{
-    margin: 0;
-    font-size: 15px;
-}
-
-/* Main container */
-.w3-content {
-    max-width: 900px;
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto', sans-serif;
-    display: flex; /* Use flexbox for layout */
-    flex-direction: row; /* Arrange columns in a row */
-}
-
-/* Column styles */
-.w3-column {
-    padding: 10px; /* Add some padding for spacing */
-}
-
-/* Left column styles */
-.w3-third {
-    flex: 1; /* Take 1 part of the space */
-}
-
-/* Right column styles */
-.w3-twothird {
-    flex: 2; /* Take 2 parts of the space */
-}
-
-/* Section headers */
-h2 {
-    color: #00796b;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-/* Text styles */
-h5 {
-    color: #333;
-    font-weight: bold;
-}
-
-h6 {
-    color: #888;
-}
-
-p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-/* Card styles */
-.w3-card {
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Image styling */
-.w3-white img {
-    width: 90% !important; /* Reduced size */
-    height: 50vh;
-    border-radius: 50%; /* Make it circular */
-    transition: transform 0.3s ease; /* Animation on hover */
-    margin-right: 80px !important;
-    display: flex; /* Centering with margin */
-}
-
-/* Hover effect */
-.w3-white img:hover {
-    transform: scale(1.1); /* Scale effect on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
-}
-
-/* Skills progress bars */
-.w3-light-grey {
-    background-color: #e0e0e0;
-    border-radius: 25px;
-}
-
-.w3-teal {
-    background-color: #00796b;
-    border-radius: 10px;
-    padding: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-/* Footer styles */
-footer {
-    background-color: #00796b;
-    padding: 10px;
-    color: white;
-    text-align: center;
-}
-
-
-.w3-row-padding {
+/* Base Styles */
+body {
     display: flex;
-    justify-content: space-between;
-  }
-  
-  .w3-column {
-    flex: 1; /* Adjusts the width of columns */
-  }
-  
-  .w3-third {
-    flex: 0 0 33.33%; /* Left column takes 1/3 of the width */
-  }
-  
-  .w3-twothird {
-    flex: 0 0 66.67%; /* Right column takes 2/3 of the width */
-  }
-  
-  /* Optional: Adjusting image to be responsive */
-  img {
-    width: 400px;
-    height: auto;
-    margin-right: 80px;
-  }
-  
+    justify-content: center;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.w3-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px; /* Updated for better layout */
+    margin: 20px;
+    gap: 20px;
+}
+
+.progress-bar {
+    background-color: #e0e0e0; /* Light grey background for the bar */
+    border-radius: 25px;
+    height: 25px;
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 14px;
+    color: #ffffff;
+    border-radius: 25px 0 0 25px;
+    width: 0; /* Initial width set to 0, will fill with JavaScript */
+    background: repeating-linear-gradient(
+        45deg,
+        #008080, /* Primary color for segments */
+        #008080 10px,
+        #006666 10px,
+        #006666 20px
+    ); /* Adds a striped effect */
+    transition: width 1.5s ease-in-out; /* Smooth transition for width */
+}
+
+/* Accent Colors for Text and Borders */
+.w3-text-teal {
+    color: #008080 !important; /* Consistent primary color */
+}
+
+.w3-light-grey {
+    background-color: #f0f0f0; /* Slightly darker light grey for contrast */
+}
+
+/* Add hover effects to project links */
+.w3-light-grey a {
+    color: #FF8C00; /* Dark Orange for links */
+    text-decoration: none;
+}
+
+.w3-light-grey a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Flex Layout for Larger Screens */
+@media (min-width: 768px) {
+    .w3-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /* Left Column Styling */
+    .w3-column.w3-third {
+        flex: 1;
+        max-width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    /* Right Column Styling */
+    .w3-column.w3-twothird {
+        flex: 2;
+        max-width: 65%;
+        margin-left: auto;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Space between sections */
+    }
+
+    #work-experience {
+        order: -1; /* Sets Work Experience to appear at the top */
+        margin-top: -1350px; /* Adjust this value to control the distance from the top */
+    }
+}
+
+/* Position footer at the bottom of the viewport */
+footer.w3-container {
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #008080; /* Footer color */
+    color: white; /* Footer text color */
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Remove padding/margin from containers */
+.w3-container {
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive Image in Left Column */
+.w3-column.w3-third img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Animation Effects for Footer Icons */
+footer i {
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+footer i:hover {
+    transform: scale(1.2);
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Additional Styling for Content Sections */
+.w3-container h2, .w3-container h5 {
+    transition: color 0.3s, transform 0.3s;
+}
+
+.w3-container h2:hover, .w3-container h5:hover {
+    color: #FF8C00; /* Change hover color to Dark Orange */
+    transform: scale(1.05);
+}
