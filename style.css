@@ -94,7 +94,7 @@ body {
 
     #work-experience {
         order: -1; /* Sets Work Experience to appear at the top */
-        margin-top: -2250px; /* Adjust this value to control the distance from the top */
+        margin-top: -1850px; /* Adjust this value to control the distance from the top */
     }
 }
 
@@ -155,4 +155,3 @@ footer i:hover {
     color: #FF8C00; /* Change hover color to Dark Orange */
     transform: scale(1.05);
 }
-
